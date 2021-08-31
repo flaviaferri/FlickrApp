@@ -17,7 +17,7 @@ export default function Home() {
     const getPhotos = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/search?search=${search}`
+          `https://flickr-app.vercel.app/api/search?search=${search}`
         );
         setPhotos(response.data.photos.photo);
       } catch (error) {
@@ -27,7 +27,9 @@ export default function Home() {
 
     const getDailyPhotos = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/daily`);
+        const response = await axios.get(
+          `https://flickr-app.vercel.app/api/daily`
+        );
         setPhotos(response.data.photos.photo);
       } catch (error) {
         // setIsError(true);
