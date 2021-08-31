@@ -20,7 +20,7 @@ export default function Input({ handleSubmit }) {
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleEnter}
           value={value}
-        ></input>
+        />
         <FaSearch
           className="absolute right-4 top-4 cursor-pointer"
           onClick={() => handleSubmit(value)}

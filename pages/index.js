@@ -10,28 +10,29 @@ export default function Home() {
   const [search, setSearch] = useState();
   const [photos, setPhotos] = useState([]);
 
-  console.log(photos);
   // responsible to call the API
   useEffect(() => {
+    // Get photos searched
     const getPhotos = async () => {
       try {
         const response = await axios.get(`/api/search?search=${search}`);
         setPhotos(response.data.photos.photo);
       } catch (error) {
-        // setIsError(true);
+        console.log("Error", error);
       }
     };
 
+    // Get daily photos
     const getDailyPhotos = async () => {
       try {
         const response = await axios.get(`/api/daily`);
         setPhotos(response.data.photos.photo);
-        console.log("response", response);
       } catch (error) {
-        // setIsError(true);
+        console.log("Error", error);
       }
     };
 
+    // In case there is no search, get daily pictures
     if (!search) {
       getDailyPhotos();
       return;
@@ -44,7 +45,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Flickr Photos App</title>
-        <meta name="description" content="Flickr Photos app" />
+        <meta name="description" content="Flickr Photos App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

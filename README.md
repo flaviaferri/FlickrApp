@@ -1,8 +1,8 @@
-# Title
+# Flickr Photos App
 
 ## 🔖 Description
 
-🌐
+🌐 Through this application, you can search photos from [Flickr](https://www.flickr.com/), the internet’s source of freely-usable images.
 
 ---
 
@@ -12,9 +12,11 @@ This project is using the following technologies:
 
 - HTML
 - CSS
-- [Emotion](https://emotion.sh/docs/introduction)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
 
 ---
 
@@ -24,10 +26,6 @@ This project is using the following technologies:
 $ npm install
 $ npm run dev
 ```
-
-## Configuration
-
-- ***
 
 <p>Create with ❤️ by <a href='https://github.com/flaviaferri' target='_blank'>Flavia Ferri</a></p>
 # boilerplate_nextJs
