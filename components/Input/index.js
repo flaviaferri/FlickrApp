@@ -11,10 +11,10 @@ export default function Input({ handleSubmit }) {
   };
   return (
     <>
-      <div className="relative w-9/12">
+      <div className="relative w-full">
         <input
-          className="w-full h-9 flex items-center justify-center bg-gray-100 rounded-lg outline-none "
-          name="size"
+          className="w-full h-12 pl-4 py-5 flex text-lg bg-gray-200 rounded-lg outline-none"
+          name="search"
           type="text"
           placeholder="Search Pictures"
           onChange={(e) => setValue(e.target.value)}
@@ -22,7 +22,7 @@ export default function Input({ handleSubmit }) {
           value={value}
         ></input>
         <FaSearch
-          className="absolute right-2 top-2 cursor-pointer"
+          className="absolute right-4 top-4 cursor-pointer"
           onClick={() => handleSubmit(value)}
         />
       </div>
