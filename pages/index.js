@@ -18,7 +18,7 @@ export default function Home() {
       try {
         const response = await axios.get(`/api/search?search=${search}`);
         console.log(response.data.photos.photo);
-        if (response.data.photos.photo === []) {
+        if (response?.data?.photos?.photo?.length === 0) {
           setMessage(true);
         }
         setPhotos(response.data.photos.photo);
