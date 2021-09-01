@@ -8,6 +8,7 @@ app.get("/api/daily", async (req, res) => {
       // Decided to use nature as a default, because it was receiving profane photos when using getRecent photos.
       text: "nature",
       per_page: 32,
+      page: Math.floor(Math.random() * (50 - 1 + 1)) + 1,
     });
     res.statusCode = 200;
     res.end(JSON.stringify(response.body));

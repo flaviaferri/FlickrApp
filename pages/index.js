@@ -9,6 +9,7 @@ import PhotoCard from "../components/PhotoCard";
 export default function Home() {
   const [search, setSearch] = useState();
   const [photos, setPhotos] = useState([]);
+  const [message, setMessage] = useState(false);
 
   // responsible to call the API
   useEffect(() => {
@@ -16,12 +17,17 @@ export default function Home() {
     const getPhotos = async () => {
       try {
         const response = await axios.get(`/api/search?search=${search}`);
+        console.log(response.data.photos.photo);
+        if (response.data.photos.photo === []) {
+          setMessage(true);
+        }
         setPhotos(response.data.photos.photo);
       } catch (error) {
         console.log("Error", error);
       }
     };
 
+    console.log(message);
     // Get daily photos
     const getDailyPhotos = async () => {
       try {
@@ -52,6 +58,11 @@ export default function Home() {
       <main className="m-8">
         <Title>{search || "Flickr Daily"} Photos</Title>
         <Input handleSubmit={setSearch} />
+        {message && (
+          <p className="mt-8 text-lg font-semibold">
+            Sorry, we could not find photos with this search.
+          </p>
+        )}
         <PhotoCard photos={photos} />
       </main>
     </div>
